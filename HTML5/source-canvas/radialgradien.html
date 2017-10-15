@@ -1,0 +1,35 @@
+<html>
+<head>
+<title>Membuat Radial Gradien</title>
+<script>
+function drawCloud() {
+	var canvas=document.getElementById("myCanvas");
+	var c=canvas.getContext("2d");
+
+	c.beginPath(); // begin custom shape
+	c.moveTo(170,80);
+	c.bezierCurveTo(130, 100, 130, 150, 230, 150);
+	c.bezierCurveTo(250, 180, 320, 180, 340, 150);
+	c.bezierCurveTo(420, 150, 420, 120, 390, 100);
+	c.bezierCurveTo(430, 40,370, 30, 340, 50);
+	c.bezierCurveTo(320, 5,250, 20, 250, 50);
+	c.bezierCurveTo(200, 5,150, 20, 170, 80);
+	c.closePath(); // complete custom shape
+
+	var grd=c.createRadialGradient(238,50,10,238,50,200);
+	grd.addColorStop(0,"#8ED6FF"); // light blue
+	grd.addColorStop(1,"#004CB3"); // dark blue
+	c.fillStyle=grd;
+	c.fill();
+
+	c.lineWidth=5;
+	c.strokeStyle="#0000ff";
+	c.stroke(); 
+}
+
+</script>
+</head>
+<body onload="drawCloud()">
+<canvas id="myCanvas" width="578" height="250"></canvas>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<html>
+<head>
+<title>Membuat Arc Tutorial</title>
+<script>
+function drawArc() {
+	var canvas=document.getElementById("myCanvas");
+	var c=canvas.getContext("2d");
+
+	var centerX = 288;
+	var centerY = 160;
+	var radius= 75;
+	var startingAngle = 1.1 * Math.PI;
+	var endingAngle = 1.9 * Math.PI;
+	var counterclockwise = false;
+
+	c.arc(centerX,centerY, radius, startingAngle,
+	endingAngle,counterclockwise);
+	c.lineWidth=15;
+	c.strokeStyle="black"; // line color
+	c.stroke();
+}
+
+</script>
+</head>
+<body onload="drawArc()">
+<canvas id="myCanvas" width="578" height="250"></canvas>
+</body>
+</html>
